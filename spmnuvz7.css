@@ -1,0 +1,94 @@
+.osnov{
+text-align: center;
+color: greenyellow;
+font-size: 1.7rem;
+margin-top: 4rem;
+}
+
+* { margin: 0; padding: 0; }
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #2b2b2b;
+}
+li {
+  list-style-type: none;
+}
+.btn-wrap {
+  position: relative;
+  left: 25px;
+  top: 15px;
+  width: 100px;
+  height: 25px;
+  z-index: 5;
+  overflow: hidden;
+}
+button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: fantasy;
+  font-size: 15px;
+  letter-spacing: 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  left: -100%;
+  transition: left 1s;
+}
+.active {
+  left: 0;
+}
+menu {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  background: rgba(250, 250, 250, .1);
+  transform: translate(-150%, -50%);
+  transition: transform 1s 1s, height 1s;
+}
+.open {
+  height: 100%;
+  transform: translate(-50%, -50%);
+  transition: transform 1s, height 1s 1s;
+}
+li {
+  overflow: hidden;
+  color: white;
+  font-family: fantasy;
+  font-size: 3vmax;
+  letter-spacing: 5px;
+  margin: 5px;
+  padding: 1px;
+}
+li span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+menu>li {
+  opacity: 0;
+  transition: opacity 1s;
+}
+menu.open>li {
+  opacity: 1;
+  transition: opacity 1s 1s;
+}
+menu>li span {
+  transform: translateY(-100%);
+  transition: transform .5s;
+}
+menu.open>li span {
+  transform: translateY(0);
+  transition: transform .5s 1.5s;
+}
