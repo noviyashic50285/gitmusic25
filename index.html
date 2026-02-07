@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Музыка 25</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/audioplay.css" />
     <link rel="stylesheet" href="spmnuvz7.css" />
 <link rel="icon" type="Images/x-icon" href="atsicon.ico"/>
 </head>
@@ -15,6 +17,33 @@
 </div>
 
 <div class="osnov">
+
+<div class="player" id="player">
+  <div class="details">
+      <div class="now-playing">Слушаем x из y</div>&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="track-art"></div>
+      <div class="track-name">Название</div>&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="track-artist">Исполнитель</div>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+
+  <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-2x"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+  </div>
+  <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+  </div>
+
+  <!-- <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+  </div> -->
+</div>
+
 «Музыка выражает то, что нельзя выразить словами и то, 
 о чём нельзя молчать» Виктор Гюго
 </div>
@@ -43,6 +72,7 @@
 </menu>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="styles/audioplay.js"></script>  
 <script src="spmnuvz7.js"></script>  
 </body>
 </html>
